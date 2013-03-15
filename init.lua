@@ -96,9 +96,9 @@ dofile(minetest.get_modpath("throwing").."/fire_arrow.lua")
 dofile(minetest.get_modpath("throwing").."/teleport_arrow.lua")
 dofile(minetest.get_modpath("throwing").."/dig_arrow.lua")
 dofile(minetest.get_modpath("throwing").."/build_arrow.lua")
---check if vines mod is installed and then
-dofile(minetest.get_modpath("throwing").."/rope_arrow.lua")
-
+if minetest.get_modpath("vines") then
+  dofile(minetest.get_modpath("throwing").."/rope_arrow.lua")
+end
 if minetest.setting_get("log_mods") then
 	minetest.log("action", "throwing loaded")
 end
