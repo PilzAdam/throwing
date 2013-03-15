@@ -1,6 +1,9 @@
 === THROWING-MOD for MINETEST-C55 ===
 by PilzAdam
 
+Contribution
+Rope arrow and re-texturing (bas080)
+
 Inroduction:
 This mod adds bows and arrows to Minetest.
 

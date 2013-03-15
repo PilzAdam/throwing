@@ -3,7 +3,8 @@ arrows = {
 	{"throwing:arrow_fire", "throwing:arrow_fire_entity"},
 	{"throwing:arrow_teleport", "throwing:arrow_teleport_entity"},
 	{"throwing:arrow_dig", "throwing:arrow_dig_entity"},
-	{"throwing:arrow_build", "throwing:arrow_build_entity"}
+	{"throwing:arrow_build", "throwing:arrow_build_entity"},
+	{"throwing:arrow_rope", "throwing:arrow_rope_entity"}
 }
 
 local throwing_shoot_arrow = function(itemstack, player)
@@ -95,6 +96,8 @@ dofile(minetest.get_modpath("throwing").."/fire_arrow.lua")
 dofile(minetest.get_modpath("throwing").."/teleport_arrow.lua")
 dofile(minetest.get_modpath("throwing").."/dig_arrow.lua")
 dofile(minetest.get_modpath("throwing").."/build_arrow.lua")
+--check if vines mod is installed and then
+dofile(minetest.get_modpath("throwing").."/rope_arrow.lua")
 
 if minetest.setting_get("log_mods") then
 	minetest.log("action", "throwing loaded")
