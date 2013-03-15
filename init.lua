@@ -9,7 +9,9 @@ arrows = {
 local throwing_shoot_arrow = function(itemstack, player)
 	for _,arrow in ipairs(arrows) do
 		if player:get_inventory():get_stack("main", player:get_wield_index()+1):get_name() == arrow[1] then
-			player:get_inventory():remove_item("main", arrow[1])
+			if not minetest.setting_getbool("creative_mode") then
+				player:get_inventory():remove_item("main", arrow[1])
+			end
 			local playerpos = player:getpos()
 			local obj = minetest.env:add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, arrow[2])
 			local dir = player:get_look_dir()
@@ -33,7 +35,9 @@ minetest.register_tool("throwing:bow_wood", {
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		if throwing_shoot_arrow(itemstack, user, pointed_thing) then
-			itemstack:add_wear(65535/50)
+			if not minetest.setting_getbool("creative_mode") then
+				itemstack:add_wear(65535/50)
+			end
 		end
 		return itemstack
 	end,
@@ -54,7 +58,9 @@ minetest.register_tool("throwing:bow_stone", {
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		if throwing_shoot_arrow(item, user, pointed_thing) then
-			itemstack:add_wear(65535/100)
+			if not minetest.setting_getbool("creative_mode") then
+				itemstack:add_wear(65535/100)
+			end
 		end
 		return itemstack
 	end,
@@ -75,7 +81,9 @@ minetest.register_tool("throwing:bow_steel", {
     stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		if throwing_shoot_arrow(item, user, pointed_thing) then
-			itemstack:add_wear(65535/200)
+			if not minetest.setting_getbool("creative_mode") then
+				itemstack:add_wear(65535/200)
+			end
 		end
 		return itemstack
 	end,
