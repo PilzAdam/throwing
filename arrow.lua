@@ -52,10 +52,7 @@ THROWING_ARROW_ENTITY.on_step = function(self, dtime)
 					local damage = 3
 					obj:punch(self.object, 1.0, {
 						full_punch_interval=1.0,
-						groupcaps={
-							fleshy={times={[1]=1/(damage-2), [2]=1/(damage-1), [3]=1/damage}},
-							snappy={times={[1]=1/(damage-2), [2]=1/(damage-1), [3]=1/damage}},
-						}
+						damage_groups={fleshy=damage},
 					}, nil)
 					self.object:remove()
 				end
@@ -63,10 +60,7 @@ THROWING_ARROW_ENTITY.on_step = function(self, dtime)
 				local damage = 3
 				obj:punch(self.object, 1.0, {
 					full_punch_interval=1.0,
-					groupcaps={
-						fleshy={times={[1]=1/(damage-2), [2]=1/(damage-1), [3]=1/damage}},
-						snappy={times={[1]=1/(damage-2), [2]=1/(damage-1), [3]=1/damage}},
-					}
+					damage_groups={fleshy=damage},
 				}, nil)
 				self.object:remove()
 			end
