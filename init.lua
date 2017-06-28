@@ -104,6 +104,6 @@ dofile(minetest.get_modpath("throwing").."/teleport_arrow.lua")
 dofile(minetest.get_modpath("throwing").."/dig_arrow.lua")
 dofile(minetest.get_modpath("throwing").."/build_arrow.lua")
 
-if minetest.setting_get("log_mods") then
+if minetest.setting_getbool("log_mods") then
 	minetest.log("action", "throwing loaded")
 end
